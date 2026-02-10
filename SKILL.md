@@ -21,10 +21,16 @@ Create a reliable repository briefing before implementation work.
 
 ### 2) Freshness Check
 
-Look for cached artifacts in `.codex/`:
+Determine cache base directory in this order:
 
-- `.codex/repo-brief.json`
-- `.codex/repo-brief.md`
+- `.codex/` (if present)
+- `.claude/` (if `.codex/` is not present)
+- `.agent-cache/` (fallback)
+
+Look for cached artifacts under the selected base directory:
+
+- `<base>/repo-brief.json`
+- `<base>/repo-brief.md`
 
 If cache exists and all checks pass, load and use cache:
 
@@ -66,8 +72,8 @@ Gather facts without destructive commands.
 
 Produce two outputs:
 
-1. Human briefing: `.codex/repo-brief.md`
-2. Machine facts: `.codex/repo-brief.json`
+1. Human briefing: `<base>/repo-brief.md`
+2. Machine facts: `<base>/repo-brief.json`
 
 Both must include:
 
