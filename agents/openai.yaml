@@ -1,0 +1,4 @@
+interface:
+  display_name: "First Watch"
+  short_description: "Scan and cache a first-session repository briefing"
+  default_prompt: "Use $first-watch to survey this repository and build/update .codex repo briefing artifacts before implementation."
